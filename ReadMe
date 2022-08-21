@@ -1,0 +1,15 @@
+To solve this problem I went for a BFS based approach.
+This approach works because the matrix can be viewed as a graph where every two adjacent locations are connected and
+the weight for every edge is the same.
+
+visited: Set of visited location to avoid infinitely searching the matrix. Note that the datastructure chosen is a set which
+gives constant average time complexity for lookup and addition
+
+q: queue of coordinates to be visited(with their distance from the origin)
+ordered by distance(these are naturally ordered by the order of addititon going from the source outwards)
+
+Found: coordinates were ghostes were found with the appropriate distance, ordered in the same way the q is oredered
+
+Process:
+I first add the source(pacman) to the queue and then run bfs, adding all valid adjacent coordinates. In the next iteration
+I dequeue the first coordinate and keep this loop going until q is empty
